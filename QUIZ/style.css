@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    background-image: url('fondo23.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto */
+    display: flex; /* Para centrar contenido si es necesario */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #7e3ce7;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #7e3ce7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #7e3ce7;
+}
+
+.option {
+    padding: 10px;
+    margin: 5px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #d4d4d4;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: #e7e7e7;
+}
