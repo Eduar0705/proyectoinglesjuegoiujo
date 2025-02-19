@@ -16,7 +16,14 @@ let matchedPairs = 0;
 const levels = [
     { pairs: 6, time: 60 },
     { pairs: 8, time: 90 },
-    { pairs: 10, time: 120 }
+    { pairs: 10, time: 120 },
+    { pairs: 12, time: 150 },
+    { pairs: 15, time: 180 }
+];
+
+const emojis = [
+    '🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼',
+    '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵'
 ];
 
 function startGame() {
@@ -37,22 +44,27 @@ function resetGame() {
 
 function createCards() {
     const currentLevel = levels[level - 1];
-    const symbols = ['🍎', '🍌', '🍇', '🍊', '🍓', '🍉', '🍋', '🥝', '🍍', '🥭'];
     cards = [];
 
     for (let i = 0; i < currentLevel.pairs; i++) {
-        cards.push(symbols[i], symbols[i]);
+        const emoji = emojis[i];
+        cards.push(createCard(emoji), createCard(emoji));
     }
 
     shuffleArray(cards);
 
-    cards.forEach((symbol, index) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.dataset.index = index;
-        card.addEventListener('click', flipCard);
-        gameBoard.appendChild(card);
-    });
+    cards.forEach(card => gameBoard.appendChild(card));
+}
+
+function createCard(emoji) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+        <div class="card-front"></div>
+        <div class="card-back">${emoji}</div>
+    `;
+    card.addEventListener('click', flipCard);
+    return card;
 }
 
 function shuffleArray(array) {
@@ -65,7 +77,6 @@ function shuffleArray(array) {
 function flipCard() {
     if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
         this.classList.add('flipped');
-        this.textContent = cards[this.dataset.index];
         flippedCards.push(this);
 
         if (flippedCards.length === 2) {
@@ -78,30 +89,29 @@ function flipCard() {
 
 function checkMatch() {
     const [card1, card2] = flippedCards;
-    const isMatch = cards[card1.dataset.index] === cards[card2.dataset.index];
+    const isMatch = card1.querySelector('.card-back').textContent === card2.querySelector('.card-back').textContent;
 
     setTimeout(() => {
         if (isMatch) {
             matchedPairs++;
             score += 10;
-            updateDisplay();
+            card1.removeEventListener('click', flipCard);
+            card2.removeEventListener('click', flipCard);
             checkLevelCompletion();
         } else {
             card1.classList.remove('flipped');
             card2.classList.remove('flipped');
-            card1.textContent = '';
-            card2.textContent = '';
             score = Math.max(0, score - 1);
-            updateDisplay();
         }
         flippedCards = [];
+        updateDisplay();
     }, 1000);
 }
 
 function checkLevelCompletion() {
     if (matchedPairs === levels[level - 1].pairs) {
         clearInterval(timer);
-        if (level < 3) {
+        if (level < levels.length) {
             level++;
             setTimeout(() => {
                 alert(`Level ${level - 1} completed! Moving to the next level.`);

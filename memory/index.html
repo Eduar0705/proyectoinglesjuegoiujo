@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Memory Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modern Memory Game</h1>
+        <div class="game-info">
+            <div class="info-card">
+                <span class="icon">🏆</span>
+                <div>
+                    <p>Level</p>
+                    <span id="level">1</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="icon">🔄</span>
+                <div>
+                    <p>Moves</p>
+                    <span id="moves">0</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="icon">⏱️</span>
+                <div>
+                    <p>Time</p>
+                    <span id="timer">00:00</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="icon">🌟</span>
+                <div>
+                    <p>Score</p>
+                    <span id="score">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="game-board"></div>
+        <button id="start-button">Start Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
