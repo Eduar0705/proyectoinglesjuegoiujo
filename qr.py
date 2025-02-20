@@ -1,7 +1,7 @@
 import qrcode
 
 # El enlace que quieres que el código QR dirija
-url = 'https://juegowediujoo.netlify.app/'
+url = 'https://iujojuegoingles.netlify.app/'
 
 # Crear un objeto QRCode
 qr = qrcode.QRCode(
@@ -19,4 +19,4 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 
 # Guardar la imagen en un archivo
-img.save("codigo_qr.png")
+img.save("codigojuego_qr.png")
