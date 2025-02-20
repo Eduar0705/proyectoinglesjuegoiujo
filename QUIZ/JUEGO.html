@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero Quiz - Passive Voice</title>
-    <link rel="stylesheet" href="./QUIZ/style.css">
+    <title>Superhero Quiz</title>
+    <link rel="icon" type="img" href="./action_avengers_book_comic_marvel_movie_icon_183140.ico">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
@@ -14,16 +15,24 @@
             <button id="easy">Easy</button>
             <button id="medium">Medium</button>
             <button id="hard">Hard</button>
-            <button id="exit"><a href="Index.html">Exit</a></button>
         </div>
         <div id="game" style="display:none;">
             <p id="question"></p>
             <div id="options"></div>
-            <p id="timer">Time remaining: <span id="time">10</span> seconds</p>
+            <p id="timer">Time remaining: <span id="time">15</span> seconds</p>
             <p id="feedback"></p>
         </div>
         <button id="restart" style="display:none;">Restart</button>
     </div>
-    <script src="./QUIZ/script.js"></script>
+    <script src="./script.js"></script>
+    <audio id="backgroundMusic" loop>
+        <source src="./The Avengers(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
+      <audio id="winSound">
+        <source src="./Sonido de ganador _ Efecto de sonido(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
+      <audio id="loseSound">
+        <source src="./Sonido de perdedor _ Efecto de sonido(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
 </body>
 </html>

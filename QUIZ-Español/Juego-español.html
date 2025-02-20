@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhéroes en Acción</title>
+    <link rel="icon" type="img" href="./action_avengers_book_comic_marvel_movie_icon_183140.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Superhéroes en Acción: Quiz</h1>
+        <div id="difficulty-selection">
+            <h2>Seleccione el Nivel de Dificultad</h2>
+            <button id="easy">Fácil</button>
+            <button id="medium">Media</button>
+            <button id="hard">Difícil</button>
+        </div>
+        <div id="game" style="display:none;">
+            <p id="question"></p>
+            <div id="options"></div>
+            <p id="timer">Tiempo restante: <span id="time">15</span> segundos</p>
+            <p id="feedback"></p>
+        </div>
+        <button id="restart" style="display:none;">Reiniciar</button>
+    </div>
+    <script src="./script.js"></script>
+    <audio id="backgroundMusic" loop>
+        <source src="./The Avengers(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
+      <audio id="winSound">
+        <source src="./Sonido de ganador _ Efecto de sonido(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
+      <audio id="loseSound">
+        <source src="./Sonido de perdedor _ Efecto de sonido(MP3_160K).mp3" type="audio/mpeg">
+      </audio>
+</body>
+</html>
